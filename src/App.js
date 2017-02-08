@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Posts from './posts/Posts';
+import PostsContainer from './posts/PostsContainer';
 import BlogTitle from './common/BlogTitle';
 
 import './App.css';
@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <div>
                 <BlogTitle>My Awesome Blog</BlogTitle>
-                <Posts />
+                <PostsContainer />
             </div>
         );
     }
