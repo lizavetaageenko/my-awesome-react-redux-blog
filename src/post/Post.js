@@ -1,18 +1,51 @@
 import React from 'react';
 
 import PostControls from './PostControls';
-import PostComments from './PostComments';
+import Comments from '../comments/Comments';
 
-const Post = ({ post }) => (
-    <div>
-        <h3>{post.title}</h3>
-        <div>
-            {post.body}
-        </div>
-        <PostControls />
-        <PostComments />
-    </div>
-);
+class Post extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            areCommentsShown: false
+        };
+
+        this.toggleComments = this.toggleComments.bind(this);
+    }
+
+    toggleComments() {
+        const { areCommentsShown } = this.state;
+
+        this.setState({
+            areCommentsShown: !areCommentsShown
+        });
+    }
+
+    renderComments() {
+        const { areCommentsShown } = this.state;
+
+        return areCommentsShown
+            ? <Comments />
+            : null;
+    }
+
+    render() {
+        const {post} = this.props;
+
+        return (
+            <div>
+                <h3>{post.title}</h3>
+                <div>
+                    {post.body}
+                </div>
+                <PostControls onShowCommentsClick={this.toggleComments}/>
+
+                {this.renderComments()}
+            </div>
+        );
+    }
+}
 
 export default Post;
 

@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../common/Button'
 import './PostControls.css'
 
-const PostControls = () => (
+const PostControls = ({ onShowCommentsClick }) => (
     <div className="post-controls">
         <div className="post-controls-left">
             <Button>Edit</Button>
@@ -11,7 +11,7 @@ const PostControls = () => (
         </div>
 
         <div className="post-controls-right">
-            <Button>Show Comments</Button>
+            <Button onClick={onShowCommentsClick}>Show Comments</Button>
         </div>
 
     </div>
