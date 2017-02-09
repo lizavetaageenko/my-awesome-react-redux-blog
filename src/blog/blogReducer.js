@@ -1,4 +1,4 @@
-import { UPDATE_POSTS } from './postsActions';
+import { UPDATE_POSTS } from './blogActions';
 
 export default function (state = [], action) {
     switch (action.type) {

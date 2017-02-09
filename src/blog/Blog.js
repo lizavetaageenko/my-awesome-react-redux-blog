@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Post from './post/Post';
+import Post from '../post/Post';
 
-const Posts = ({ posts }) => (
-    <div>
+const Blog = ({ posts }) => (
+    <div className="container">
         {
             posts.map((post) => (
                 <Post
@@ -15,12 +15,12 @@ const Posts = ({ posts }) => (
     </div>
 );
 
-export default Posts;
+export default Blog;
 
-Posts.propTypes = {
+Blog.propTypes = {
     posts: React.PropTypes.array
 };
 
-Posts.defaultProps = {
+Blog.defaultProps = {
     posts: []
 };

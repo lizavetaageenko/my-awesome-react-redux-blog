@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import PostsContainer from './posts/PostsContainer';
-import BlogTitle from './common/BlogTitle';
+import BlogContainer from './blog/BlogContainer';
+import BlogHeader from './common/BlogHeader';
 
 import './App.css';
 
@@ -9,8 +9,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <BlogTitle>My Awesome Blog</BlogTitle>
-                <PostsContainer />
+                <BlogHeader>My Awesome Blog</BlogHeader>
+                <BlogContainer />
             </div>
         );
     }

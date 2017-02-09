@@ -1,0 +1,21 @@
+.header {
+    background-color: #222;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    animation: logo-spin infinite 20s linear;
+    height: 100px;
+    width: 100px;
+}
+
+.header-title {
+    display: inline-block;
+}

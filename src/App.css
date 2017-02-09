@@ -1,12 +1,8 @@
-.App {
-  text-align: center;
+.container {
+    padding: 0 2rem;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
+@keyframes logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Posts from './Posts';
-import { getPosts } from './postsActions';
+import Blog from './Blog';
+import { getPosts } from './blogActions';
 
-class PostsContainer extends React.Component {
+class BlogContainer extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -15,16 +15,16 @@ class PostsContainer extends React.Component {
 
     render() {
         return (
-            <Posts posts={this.props.posts} />
+            <Blog posts={this.props.posts} />
         );
     }
 }
 
-PostsContainer.propTypes = {
+BlogContainer.propTypes = {
     posts: React.PropTypes.array
 };
 
-PostsContainer.defaultProps = {
+BlogContainer.defaultProps = {
     posts: []
 };
 
@@ -37,4 +37,4 @@ export default connect(
             dispatch(getPosts());
         }
     })
-)(PostsContainer);
+)(BlogContainer);
