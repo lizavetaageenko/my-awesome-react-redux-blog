@@ -1,8 +1,9 @@
 import fetch from 'isomorphic-fetch';
 
 import { MY_AWESOME_BLOG_WEB_API } from '../endpoints';
+import { deleteCommentsByPostId } from '../comments/commentsActions';
 
-export const UPDATE_POSTS = 'UPDATE_POSTS';
+export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const getPosts = () => (dispatch) => {
     fetch(`${MY_AWESOME_BLOG_WEB_API}/posts`, {
         method: 'GET'
@@ -11,7 +12,7 @@ export const getPosts = () => (dispatch) => {
         .then((posts) => {
             if (posts && posts.length) {
                 dispatch({
-                    type: UPDATE_POSTS,
+                    type: RECEIVE_POSTS,
                     posts
                 });
             }
@@ -35,6 +36,22 @@ export const updatePost = (post) => (dispatch) => {
                     post
                 });
             }
+        });
+};
+
+export const DELETE_POST = 'DELETE_POST';
+export const deletePost = (postId) => (dispatch) => {
+    fetch(`${MY_AWESOME_BLOG_WEB_API}/posts/${postId}`, {
+        method: 'DELETE'
+    })
+        .then(response => response.json())
+        .then(() => {
+            dispatch({
+                type: DELETE_POST,
+                postId
+            });
+
+            dispatch(deleteCommentsByPostId(postId));
         });
 };
 

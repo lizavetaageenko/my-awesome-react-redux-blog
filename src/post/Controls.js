@@ -2,11 +2,11 @@ import React from 'react';
 
 import Button from '../common/Button';
 
-const Controls = ({ editBtnText, commentsBtnText, onEditBtnClick, onCommentsBtnClick }) => (
+const Controls = ({ editBtnText, commentsBtnText, onEditBtnClick, onCommentsBtnClick, onDeleteBtnClick }) => (
     <div className="post-controls">
         <div className="post-controls-left">
             <Button onClick={onEditBtnClick}>{editBtnText}</Button>
-            <Button>Delete</Button>
+            <Button onClick={onDeleteBtnClick}>Delete</Button>
         </div>
 
         <div className="post-controls-right">
@@ -19,6 +19,7 @@ Controls.propTypes = {
     editBtnText: React.PropTypes.string,
     commentsBtnText: React.PropTypes.string,
     onEditBtnClick: React.PropTypes.func,
+    onDeleteBtnClick: React.PropTypes.func,
     onCommentsBtnClick: React.PropTypes.func,
 };
 

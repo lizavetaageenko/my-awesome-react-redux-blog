@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
-import { MY_AWESOME_BLOG_WEB_API } from '../endpoints';
+import {MY_AWESOME_BLOG_WEB_API} from '../endpoints';
 
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const getCommentsByPostId = (postId) => (dispatch) => {
@@ -17,3 +17,6 @@ export const getCommentsByPostId = (postId) => (dispatch) => {
             }
         });
 };
+
+export const DELETE_COMMENTS = 'DELETE_COMMENTS';
+export const deleteCommentsByPostId = (postId) => ({type: DELETE_COMMENTS, postId});

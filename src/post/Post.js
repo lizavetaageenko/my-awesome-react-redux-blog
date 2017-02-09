@@ -6,7 +6,7 @@ import StaticContent from './StaticContent';
 import EditableContent from './EditableContent';
 import Controls from './Controls';
 
-import { updatePost } from '../blog/blogActions';
+import { updatePost, deletePost } from '../blog/blogActions';
 
 import './Post.css';
 
@@ -71,12 +71,14 @@ class Post extends React.Component {
 
     renderControls = () => {
         const { areCommentsShown, isEditMode } = this.state;
+        const { post } = this.props;
 
         return (
             <Controls
                 editBtnText={isEditMode ? 'Save' : 'Edit'}
                 commentsBtnText={areCommentsShown ? 'Hide Comments' : 'Show Comments'}
                 onEditBtnClick={this.toggleEditMode}
+                onDeleteBtnClick={() => this.props.deletePost(post.id)}
                 onCommentsBtnClick={this.toggleComments}
             />
         );
@@ -106,6 +108,9 @@ export default connect(
     (dispatch) => ({
         updatePost: (post) => {
             dispatch(updatePost(post));
+        },
+        deletePost: (postId) => {
+            dispatch(deletePost(postId));
         }
     })
 )(Post);
