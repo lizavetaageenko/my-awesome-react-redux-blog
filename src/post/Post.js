@@ -1,7 +1,8 @@
 import React from 'react';
 
-import PostControls from './PostControls';
-import Comments from '../comments/Comments';
+import CommentsContainer from '../comments/CommentsContainer';
+import Button from '../common/Button';
+import './Post.css';
 
 class Post extends React.Component {
     constructor(props) {
@@ -24,14 +25,16 @@ class Post extends React.Component {
 
     renderComments() {
         const { areCommentsShown } = this.state;
+        const { post } = this.props;
 
         return areCommentsShown
-            ? <Comments />
+            ? <CommentsContainer postId={post.id} />
             : null;
     }
 
     render() {
-        const {post} = this.props;
+        const { areCommentsShown } = this.state;
+        const { post } = this.props;
 
         return (
             <div>
@@ -39,7 +42,19 @@ class Post extends React.Component {
                 <div>
                     {post.body}
                 </div>
-                <PostControls onShowCommentsClick={this.toggleComments}/>
+                <div className="post-controls">
+                    <div className="post-controls-left">
+                        <Button>Edit</Button>
+                        <Button>Delete</Button>
+                    </div>
+
+                    <div className="post-controls-right">
+                        <Button onClick={this.toggleComments}>
+                            {areCommentsShown ? 'Hide Comments' : 'Show Comments'}
+                        </Button>
+                    </div>
+
+                </div>
 
                 {this.renderComments()}
             </div>

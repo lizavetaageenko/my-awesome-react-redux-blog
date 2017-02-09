@@ -2,11 +2,10 @@ import React from 'react';
 
 const PostComments = ({ comments }) => (
     <div>
-        <h4>Lalalalala</h4>
         {
             comments.map((comment) => (
                 <div>
-                    <h4>Lalalalala</h4>
+                    <h4>{comment.title}</h4>
                     <div>{comment.body}</div>
                 </div>
             ))
