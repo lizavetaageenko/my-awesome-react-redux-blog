@@ -11,3 +11,19 @@
 .post-controls-right .button:last-child {
     margin-right: 0;
 }
+
+.post-title, .post-body {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.3rem;
+    border: 1px solid black;
+}
+
+.post-title {
+    margin: 2rem 0 1rem;
+}
+
+.post-body {
+    height: 5rem;
+}

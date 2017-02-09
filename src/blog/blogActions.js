@@ -17,3 +17,24 @@ export const getPosts = () => (dispatch) => {
             }
         });
 };
+
+export const RECEIVE_POST = 'RECEIVE_POST';
+export const updatePost = (post) => (dispatch) => {
+    fetch(`${MY_AWESOME_BLOG_WEB_API}/posts/${post.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+    })
+        .then(response => response.json())
+        .then((post) => {
+            if (post) {
+                dispatch({
+                    type: RECEIVE_POST,
+                    post
+                });
+            }
+        });
+};
+
