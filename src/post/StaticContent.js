@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Post.css';
+import './EditableContent.css';
 
 const StaticContent = ({ title, body }) => (
     <div>

@@ -1,0 +1,13 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.controls .button {
+    margin-right: 1rem;
+}
+
+.controls-right .button:last-child {
+    margin-right: 0;
+}

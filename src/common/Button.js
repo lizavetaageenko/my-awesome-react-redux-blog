@@ -7,7 +7,8 @@ const Button = (props) => (
         {...props}
         className={`${props.className} button`}
     >
-        {props.children}
+        <div className="hover"></div>
+        <div className="label">{props.children}</div>
     </button>
 );
 

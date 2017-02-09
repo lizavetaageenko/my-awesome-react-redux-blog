@@ -5,10 +5,7 @@ import CommentsContainer from '../comments/CommentsContainer';
 import StaticContent from './StaticContent';
 import EditableContent from './EditableContent';
 import Controls from './Controls';
-
 import { updatePost, deletePost } from '../blog/blogActions';
-
-import './Post.css';
 
 class Post extends React.Component {
     constructor(props) {
@@ -106,11 +103,7 @@ Post.defaultProps = {
 export default connect(
     null,
     (dispatch) => ({
-        updatePost: (post) => {
-            dispatch(updatePost(post));
-        },
-        deletePost: (postId) => {
-            dispatch(deletePost(postId));
-        }
+        updatePost: (post) => dispatch(updatePost(post)),
+        deletePost: (postId) => dispatch(deletePost(postId))
     })
 )(Post);

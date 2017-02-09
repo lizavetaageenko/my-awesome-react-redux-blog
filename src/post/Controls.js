@@ -2,14 +2,16 @@ import React from 'react';
 
 import Button from '../common/Button';
 
+import './Controls.css';
+
 const Controls = ({ editBtnText, commentsBtnText, onEditBtnClick, onCommentsBtnClick, onDeleteBtnClick }) => (
-    <div className="post-controls">
-        <div className="post-controls-left">
+    <div className="controls">
+        <div className="controls-left">
             <Button onClick={onEditBtnClick}>{editBtnText}</Button>
             <Button onClick={onDeleteBtnClick}>Delete</Button>
         </div>
 
-        <div className="post-controls-right">
+        <div className="controls-right">
             <Button onClick={onCommentsBtnClick}>{commentsBtnText}</Button>
         </div>
     </div>

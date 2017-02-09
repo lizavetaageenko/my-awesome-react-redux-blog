@@ -5,10 +5,6 @@ import Blog from './Blog';
 import { getPosts } from './blogActions';
 
 class BlogContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.getPosts();
     }
@@ -33,8 +29,6 @@ export default connect(
         posts: state.posts,
     }),
     (dispatch) => ({
-        getPosts: () => {
-            dispatch(getPosts());
-        }
+        getPosts: () => dispatch(getPosts())
     })
 )(BlogContainer);
