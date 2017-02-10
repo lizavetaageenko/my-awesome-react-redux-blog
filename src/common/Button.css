@@ -14,28 +14,23 @@
     z-index: 2;
 }
 
-.button .label {
-    -webkit-transition: color .15s ease-in-out;
-    transition: color .15s ease-in-out;
+.button:hover {
+    outline: 0;
+    color: #FFFFFF;
+}
+.button:focus {
+    outline: 0;
 }
 
-.button .hover {
-    z-index: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    -webkit-transition: top .35s cubic-bezier(.165,.84,.44,1);
-    transition: top .35s cubic-bezier(.165,.84,.44,1);
-    background-color: #333333;
+.button.green:hover {
+     background-color: #4dae4f;
+ }
+
+.button.red:hover {
+    background-color: #f34135;
 }
 
-.button:hover .label {
-    color: #FFF;
+.button.blue:hover {
+    background-color: #01c2bf;
 }
 
-.button:hover .hover {
-    top: 0;
-}
